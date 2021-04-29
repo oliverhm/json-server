@@ -5,7 +5,7 @@ const fs = require("fs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const dataPath = "../server.json";
+const dataPath = "./server.json";
 
 app.get("/api/episodes", (req, res) => {
   fs.readFile(dataPath, "utf8", (err, data) => {
