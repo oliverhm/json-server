@@ -4,7 +4,7 @@
   "description": "json-server ",
   "main": "index.js",
   "scripts": {
-    "server": "json-server server.json -w -d 750 -p 3333"
+    "server": "json-server server.json -w -d 750 -p 80"
   },
   "repository": {
     "type": "git",
