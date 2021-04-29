@@ -1,0 +1,22 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "description": "json-server ",
+  "main": "index.js",
+  "scripts": {
+    "server": "json-server server.json -w -d 750 -p 3333"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverhm/json-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliverhm/json-server/issues"
+  },
+  "homepage": "https://github.com/oliverhm/json-server#readme",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
