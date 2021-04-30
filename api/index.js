@@ -1,21 +1,13 @@
-const app = require("express")();
-const bodyParser = require("body-parser");
-const fs = require("fs");
+const jsonServer = require("json-server");
 const { join } = require("path");
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+const server = jsonServer.create();
 
 const dataPath = "../episodes.json";
 
-app.get("/api/episodes", (req, res) => {
-  fs.readFile(join(__dirname, dataPath), "utf8", (err, data) => {
-    if (err) {
-      throw err;
-    }
+const router = jsonServer.router(join(__dirname, dataPath));
+const middlewares = jsonServer.defaults();
 
-    res.send(JSON.parse(data));
-  });
-});
+server.use(middlewares);
+server.use("/api", router);
 
-module.exports = app;
+module.exports = server;
